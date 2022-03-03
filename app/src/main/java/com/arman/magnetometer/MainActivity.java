@@ -1,5 +1,7 @@
 package com.arman.magnetometer;
 
+import static android.hardware.Sensor.STRING_TYPE_MAGNETIC_FIELD;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -53,10 +55,15 @@ public class MainActivity
     public void onSensorChanged(SensorEvent sensorEvent) {
         int sensorType = sensorEvent.sensor.getType();
         //float currentValue = sensorEvent.values[0];
+
         float [] MValues = sensorEvent.values;
+        float[] round_values = MValues.clone();
 
-        String XYZ_field=Arrays.toString(MValues);
+        for (int i=0; i<round_values.length; i++) {
+            round_values[i] = Math.round(round_values[i] * 10.0f)/10.0f;
+        }
 
+        String XYZ_field=Arrays.toString(round_values);
 
         switch (sensorType) {
             // Event came from the light sensor.
@@ -67,6 +74,8 @@ public class MainActivity
                 break;
             case Sensor.TYPE_MAGNETIC_FIELD:
                 mTextSensorMagnetometer.setText(XYZ_field);
+                //mTextSensorMagnetometer.setText(STRING_TYPE_MAGNETIC_FIELD);
+
                 break;
             default:
                 // do
