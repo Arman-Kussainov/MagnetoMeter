@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/7_android/MagnetoMeter/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/7_android/MagnetoMeter/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/7_android/MagnetoMeter/app/src/main/res/layout/fragment_plot_data_to_map.xml" value="0.2037037037037037" />
       </map>
     </option>
   </component>
